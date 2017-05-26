@@ -22,7 +22,7 @@ angular
 
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
       $rootScope.next = next;
-      $rootScope.next = current;
+      $rootScope.nowPath = next.$$route.originalPath;
     });
     //$rootScope.$on('$routeChangeSuccess', function (event) {
     //  console.log($route);
