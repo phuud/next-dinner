@@ -3,12 +3,17 @@
  */
 
 angular.module('nextDinnerApp')
-  .controller('LoginCtrl', function () {
+  .controller('LoginCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.submit = function () {
+      check_login();
+      return false;
+    }
     function check_login()
     {
       var name=$("#user_name").val();
@@ -51,10 +56,6 @@ angular.module('nextDinnerApp')
     $(function(){
       $("#create").click(function(){
         check_register();
-        return false;
-      })
-      $("#login").click(function(){
-        check_login();
         return false;
       })
       $('.message a').click(function () {
