@@ -41,6 +41,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+      .when('/cat', {
+        templateUrl: 'views/cat.html',
+        controller: 'CatCtrl',
+        controllerAs: 'cat'
+      })
       .otherwise({
         redirectTo: '/'
       });
