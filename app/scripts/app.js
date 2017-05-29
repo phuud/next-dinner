@@ -18,9 +18,27 @@ angular
     'ngTouch'
   ])
   .run(function ($rootScope,$route) {
+    var APP_ID = 'TODO';
+    var APP_KEY = 'TODO';
+    AV.init({
+      appId: APP_ID,
+      appKey: APP_KEY
+    });
+
     $rootScope.VERSION = '1.0';
 
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
+
+      //Test start
+      var query = new AV.Query('next_user');
+      query.get('id').then(function (data) {
+        console.log(data);
+        // 成功获得实例
+      }, function (error) {
+        // 异常处理
+      });
+      //Test end
+
       $rootScope.next = next;
       $rootScope.nowPath = next.$$route.originalPath;
     });
