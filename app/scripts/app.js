@@ -64,6 +64,11 @@ angular
         controller: 'CatCtrl',
         controllerAs: 'cat'
       })
+      .when('/dinner', {
+        templateUrl: 'views/dinner.html',
+        controller: 'DinnerCtrl',
+        controllerAs: 'dinner'
+      })
       .otherwise({
         redirectTo: '/'
       });
