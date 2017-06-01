@@ -116,20 +116,13 @@
   <div id="wrapper" class="login-page">
     <div id="login_form" class="form">
       <div class="login-logo">
-        <span>Next OA</span>
+        <span>{{main.title}}</span>
       </div>
-      <form class="register-form">
-        <input type="text" placeholder="用户名" id="r_user_name"/>
-        <input type="password" placeholder="密码" id="r_password" />
-        <input type="text" placeholder="电子邮件" id="r_emial"/>
-        <button id="create">创建账户</button>
-        <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
-      </form>
       <form class="login-form">
         <input type="text" placeholder="用户名" id="user_name"/>
         <input type="password" placeholder="密码" id="password"/>
-        <button id="login" ng-click="submit()">登　录</button>
-        <p class="message">还没有账户? <a href="#">立刻创建</a></p>
+        <button id="login" ng-click="main.submit()">登　录</button>
+        <p class="message">还没有账户? <a href="#" ng-click="main.register()">立刻创建</a></p>
       </form>
     </div>
   </div>
