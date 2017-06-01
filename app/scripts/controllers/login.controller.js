@@ -11,17 +11,19 @@ angular.module('nextDinnerApp')
       submit: function () {
         var name = $("#user_name").val();
         var pass = $("#password").val();
-        if (name == "luke" && pass == "111111") {
+        AV.User.logIn(name, pass).then(function (loginedUser) {
+          console.log(loginedUser);
+          var username = loginedUser.getUsername();
+          var email = loginedUser.getEmail();
           alert("登录成功！");
+        }, function (error) {
           $("#user_name").val("");
           $("#password").val("");
-        }
-        else {
           $("#login_form").removeClass('shake_effect');
           setTimeout(function () {
             $("#login_form").addClass('shake_effect')
           }, 1);
-        }
+        });
       },
       register: function () {
         alert('未开放注册');
