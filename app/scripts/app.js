@@ -28,26 +28,23 @@ angular
     $rootScope.VERSION = '1.0';
 
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
-
-      //Test start
-      var query = new AV.Query('next_user');
-      query.get('id').then(function (data) {
-        console.log(data);
-        // 成功获得实例
-      }, function (error) {
-        // 异常处理
-      });
-      //Test end
-
       $rootScope.next = next;
       $rootScope.nowPath = next.$$route.originalPath;
     });
-    //$rootScope.$on('$routeChangeSuccess', function (event) {
-    //  console.log($route);
-    //
-    //});
+    $rootScope.$on('$routeChangeSuccess', function (event) {
+      console.log($route);
+      var currentUser = AV.User.current();
+      if (currentUser) {
+        console.log('login in');
+      }
+      else {
+        console.log('not login');
+        alert('not login');
+        $location.path("/")
+      }
+    });
   })
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',
