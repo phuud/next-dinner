@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .run(function ($rootScope,$route) {
+  .run(function ($rootScope,$route,$location) {
     var APP_ID = 'TODO';
     var APP_KEY = 'TODO';
     AV.init({
@@ -26,13 +26,22 @@ angular
     });
 
     $rootScope.VERSION = '1.0';
-
+    $rootScope.flag = {
+      isLogin:false
+    };
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
       $rootScope.next = next;
       $rootScope.nowPath = next.$$route.originalPath;
     });
     $rootScope.$on('$routeChangeSuccess', function (event) {
-      console.log($route);
+      console.log($route,$location);
+      if ($location.path() === '/login' || $location.path() === '/') {
+        angular.element('.header').addClass('login-hide');
+        angular.element('.footer').addClass('login-hide');
+      } else {
+        angular.element('.header').removeClass('login-hide');
+        angular.element('.footer').removeClass('login-hide');
+      }
       var currentUser = AV.User.current();
       if (currentUser) {
         console.log('login in');
