@@ -15,7 +15,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngMaterial'
+    'ngTouch'
   ])
   .run(function ($rootScope,$route,$location) {
     var APP_ID = 'TODO';
