@@ -1,60 +1,4 @@
 <style>
-  .login-page {
-    width: 360px;
-    padding: 40% 0 0;
-    margin: auto;
-  }
-  .form {
-    border: 1px solid #999;
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
-  .form input {
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
-  .form button {
-    font-family: "Microsoft YaHei","Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: #4CAF50;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-  }
-  .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
-  }
-  .form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
-  }
-  .form .message a {
-    color: #4CAF50;
-    text-decoration: none;
-  }
-  .form .register-form {
-    display: none;
-  }
   body {
     background: url('images/bg3.jpg') no-repeat;
     background-size: inherit;
@@ -62,71 +6,24 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .shake_effect{
-    -webkit-animation-name: shake;
-    animation-name: shake;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-  }
-  @-webkit-keyframes shake {
-    from, to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-
-    10%, 30%, 50%, 70%, 90% {
-      -webkit-transform: translate3d(-10px, 0, 0);
-      transform: translate3d(-10px, 0, 0);
-    }
-
-    20%, 40%, 60%, 80% {
-      -webkit-transform: translate3d(10px, 0, 0);
-      transform: translate3d(10px, 0, 0);
-    }
-  }
-
-  @keyframes shake {
-    from, to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-
-    10%, 30%, 50%, 70%, 90% {
-      -webkit-transform: translate3d(-10px, 0, 0);
-      transform: translate3d(-10px, 0, 0);
-    }
-
-    20%, 40%, 60%, 80% {
-      -webkit-transform: translate3d(10px, 0, 0);
-      transform: translate3d(10px, 0, 0);
-    }
-  }
-  p.center{
-    color: #fff;font-family: "Microsoft YaHei";
-  }
-  .login-logo{
-    font-size: 30px;
-    margin: 0 0 25px;
-  }
 
   * {
     margin:0 auto; padding:0px;
     text-align:center;
     text-decoration:none;
-
   }
   .htmleaf-container {
     margin: 0 auto;
     overflow: hidden;
   }
 
-  .cont_principal {
+  .login-warp {
     position:absolute;
     width:100%;
     height:100%;  background:url('../img/bg.jpeg')  center / cover;
   }
 
-  .cont_join {
+  .login-box {
     overflow:hidden;
     position:absolute;
     width:320px;
@@ -141,11 +38,10 @@
     transition: all 500ms;
 
   }
-  .cont_join:hover {
+  .login-box:hover {
     box-shadow:1px 1px 1000px 1000px rgba(0,0,0,0.5),0px 0px 20px 4px rgba(0,0,0,0.4);
-
   }
-  .cont_btn_join {
+  .login-btn {
     position:absolute;
     bottom:0px;
     width:100%;
@@ -154,7 +50,7 @@
     transition: all 500ms;
   }
 
-  .cont_btn_join > a {
+  .login-btn > a {
     display:block;
     text-align:center;
     padding:10px 0px;
@@ -166,8 +62,7 @@
     color:#fff;
   }
 
-
-  .cont_letras {
+  .login-head {
     position:relative;
     margin:16px;
     -webkit-transition: all 500ms;
@@ -175,12 +70,11 @@
     transition: all 500ms;
   }
 
-  .cont_letras > p {
+  .login-head p {
     position:relative;
     margin: 0px 16px;
     font-size:48px;
-    font-family: 'Josefin Sans';
-    font-weight:1000;
+    font-weight:bold;
     color:#fff;
     -webkit-transition: all 500ms;
     -o-transition: all 500ms;
@@ -188,19 +82,16 @@
     left:0px;
   }
 
-  .cont_join_form_act{
-
-  }
-  .cont_join_form_act > .cont_letras {
+  .login-act > .login-head {
     right:0px;
     height:0px;
   }
 
-  .cont_join_form_act > .cont_form_join
+  .login-act > .login-content
   {
     left:0px;
   }
-  .cont_form_join {
+  .login-content {
     position: relative;
     width:100%;
     height:94%;
@@ -212,7 +103,7 @@
     bottom:0px;
   }
 
-  .cont_form_join > h2 {
+  .login-content > h2 {
     font-family: 'Josefin Sans';
     font-wight:800;
     color:#fff;
@@ -220,9 +111,7 @@
     margin-top:15px;
   }
 
-
-
-  .cont_form_join > p {
+  .login-content > p {
     font-family: 'Josefin Sans';
     font-weight:700;
     color:#fff;
@@ -242,37 +131,33 @@
     color:#777;
   }
 
-
-
-  .cont_join_finish >  .cont_btn_join {
+  .login-finish >  .login-btn {
     bottom:-200px;
   }
-  .cont_join_form_finish {
+  .login-welcome {
     position:relative;
     top:50%;
     left:-115px;
   }
-  .cont_join_finish > .cont_join_form_finish {
+  .login-finish > .login-welcome {
     left:115px;
     -webkit-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s;
   }
 
-
-  .cont_join_form_finish  > h2 {
+  .login-welcome  > h2 {
     font-family: 'Josefin Sans';
     font-weight:700;
     color:#fff;
     font-size:26px;
   }
 
-  .cont_join_finish  {
+  .login-finish  {
     box-shadow:0px 0px;
-
   }
 
-  .cont_join_finish:hover {
+  .login-finish:hover {
     box-shadow:0px 0px;
   }
 
@@ -289,33 +174,25 @@
   <!--<p class="message">还没有账户? <a href="#" ng-click="main.register()">立刻创建</a></p>-->
   <!--</form>-->
   <!--</div>-->
-  <div class="cont_principal">
-    <div class="cont_join  ">
-      <div class="cont_letras">
-        <p></p>
+  <div class="login-warp">
+    <div class="login-box">
+      <div class="login-head">
         <p>NextOA</p>
-        <p></p>
       </div>
-
-      <div class="cont_form_join">
+      <div class="login-content">
         <h2>JOIN</h2>
-
         <p>Login:</p>
-        <input type="text" class="input_text" />
-
+        <input type="text" class="input_text"/>
         <p>Password:</p>
-        <input type="text" class="input_text" />
-
+        <input type="text" class="input_text"/>
         <p>Code:</p>
-        <input type="password" class="input_text" />
+        <input type="password" class="input_text"/>
       </div>
-
-      <div class="cont_join_form_finish">
-        <h2>Finish <i class="material-icons">&#xE5CA;</i></h2>
+      <div class="login-welcome">
+        <h2>Welcome <i class="material-icons">&#xE5CA;</i></h2>
       </div>
-
-      <div class="cont_btn_join">
-        <a href="#"  ng-click="main.join()">JOIN</a>
+      <div class="login-btn">
+        <a href="javascript:void(0)" ng-click="main.join()">Login</a>
       </div>
     </div>
   </div>
