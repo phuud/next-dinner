@@ -34,7 +34,7 @@ angular.module('nextDinnerApp')
           angular.element('.login-head p').css('left',320);
           setTimeout(function () {
             angular.element('.login-box').addClass('login-act');
-          }, 1000);
+          }, 500);
           t++;
         } else {
           t++;
