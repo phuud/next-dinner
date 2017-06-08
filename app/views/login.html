@@ -54,16 +54,15 @@
     display:block;
     text-align:center;
     line-height: 22px;
-    padding:12px 0px;
+    padding:12px 0px 14px;
     background-color:rgba(21, 74, 118,0.82);
-    font-size:18px;
+    font-size:22px;
     width:100%;
     color:#fff;
   }
 
   .login-btn > a:hover {
     text-decoration: none;
-    font-size:22px;
   }
   .login-btn > a:focus {
     text-decoration: none;
@@ -89,11 +88,13 @@
     left:0px;
   }
 
+  .login-act{
+    background: #fefefe;
+  }
   .login-act > .login-head {
     right:0px;
     height:0px;
   }
-
   .login-act > .login-content
   {
     left:0px;
@@ -113,7 +114,7 @@
   .login-content > h2 {
     font-family: 'Josefin Sans';
     font-wight:800;
-    color:#fff;
+    color:#333;
     font-size:40px;
     margin-top:15px;
   }
@@ -130,8 +131,11 @@
 
   .input_text {
     width:230px;
-    padding:10px;
+    padding:5px 10px;
     border:1px solid rgba(0,0,0,0.2);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
     font-size:20px;
     text-align:left;
     background-color:rgba(255,255,255,0.7);
@@ -192,8 +196,7 @@
         <input type="text" class="input_text"/>
         <p>Password:</p>
         <input type="text" class="input_text"/>
-        <p>Code:</p>
-        <input type="password" class="input_text"/>
+        <span style="display: block">立即注册</span>
       </div>
       <div class="login-welcome">
         <h2>Welcome</h2>
