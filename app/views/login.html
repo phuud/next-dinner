@@ -1,6 +1,6 @@
 <style>
   body {
-    background: url('images/bg3.jpg') no-repeat;
+    background: url('images/bg1.png') no-repeat;
     background-size: inherit;
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -27,14 +27,14 @@
     overflow:hidden;
     position:absolute;
     width:320px;
-    height:420px;
+    height:340px;
     box-shadow:1px 1px 1000px 1000px rgba(0,0,0,0.2),0px 0px 20px 4px rgba(0,0,0,0.2);
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
     left:50%;
     top:50%;
-    margin-top:-230px;
+    margin-top:-170px;
     margin-left:-160px;
     -webkit-transition: all 500ms;
     -o-transition: all 500ms;
@@ -59,7 +59,7 @@
     line-height: 22px;
     padding:12px 0px 14px;
     background-color:rgba(21, 74, 118,0.82);
-    font-size:22px;
+    font-size:20px;
     width:100%;
     color:#fff;
   }
@@ -81,7 +81,7 @@
 
   .login-head p {
     position:relative;
-    margin: 70px 0;
+    line-height: 270px;
     font-size:150px;
     font-weight:bold;
     color:#fff;
@@ -115,34 +115,39 @@
   }
 
   .login-content > h2 {
-    font-family: 'Josefin Sans';
-    font-wight:800;
     color:#333;
     font-size:40px;
-    margin-top:15px;
+    margin: 15px 0 35px;
   }
 
-  .login-content > p {
-    font-family: 'Josefin Sans';
-    font-weight:700;
-    color:#fff;
-    font-size:20px;
-    margin:15px 0px 2px 15px;
-    marigin-bottom:2px;
-    text-align:left;
+  .login-content p {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    text-align: left;
+    width: 75%;
+  }
+
+  .login-content i{
+    position: absolute;
+    line-height: 40px;
+    font-size: 20px;
+    margin-left: 5px;
   }
 
   .input_text {
-    width:230px;
+    width:100%;
     padding:5px 10px;
     border:1px solid rgba(0,0,0,0.2);
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    font-size:20px;
+    line-height: 28px;
     text-align:left;
-    background-color:rgba(255,255,255,0.7);
-    color:#777;
+    padding-left: 35px;
+    font-size: 14px;
+    font-weight: normal;
   }
 
   .login-finish >  .login-btn {
@@ -195,11 +200,15 @@
       </div>
       <div class="login-content">
         <h2>Next OA</h2>
-        <p>Login:</p><i class="fa fa-home fa-fw"></i>
-        <input type="text" class="input_text"/>
-        <p>Password:</p><i class="fa fa-home fa-fw"></i>
-        <input type="text" class="input_text"/>
-        <span style="display: block">立即注册</span>
+        <p>
+          <i class="fa fa-user fa-fw"></i>
+          <input type="text" class="input_text" placeholder="Account"/>
+        </p>
+        <p>
+          <i class="fa fa-lock fa-fw"></i>
+          <input type="text" class="input_text" placeholder="Password"/>
+        </p>
+        <a href="javascript:void(0)">立即注册</a>
       </div>
       <div class="login-welcome">
         <h2>Welcome</h2>
