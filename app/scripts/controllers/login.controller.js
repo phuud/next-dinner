@@ -8,9 +8,14 @@ angular.module('nextDinnerApp')
       init: function () {
         this.title = 'Next OA'
       },
+      flag:{
+        isJoinTab:true,
+        isLoginTab:false
+      },
       submit: function () {
         var name = $("#user_name").val();
         var pass = $("#password").val();
+        console.log("is login");
         AV.User.logIn(name, pass).then(function (loginedUser) {
           console.log(loginedUser);
           var username = loginedUser.getUsername();
@@ -29,12 +34,15 @@ angular.module('nextDinnerApp')
         alert('未开放注册');
       },
       join: function () {
+        var that = this;
         var t = 0;
         if (t == 0) {
           angular.element('.login-head p').css('left',320);
           setTimeout(function () {
             angular.element('.login-box').addClass('login-act');
           }, 200);
+          that.flag.isLoginTab = true;
+          that.flag.isJoinTab = false;
           t++;
         } else {
           t++;
