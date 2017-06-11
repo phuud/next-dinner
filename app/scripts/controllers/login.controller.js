@@ -21,6 +21,10 @@ angular.module('nextDinnerApp')
           var username = loginedUser.getUsername();
           var email = loginedUser.getEmail();
           alert("登录成功！");
+          angular.element('.login-content').css('top','-250px');
+          setTimeout(function () {
+            angular.element('.login-box').addClass('login-finish');
+          }, 500);
         }, function (error) {
           $("#user_name").val("");
           $("#password").val("");
