@@ -12,6 +12,15 @@ angular.module('nextDinnerApp')
         isJoinTab:true,
         isLoginTab:false
       },
+      join: function () {
+        var that = this;
+        angular.element('.login-head p').css('left',320);
+        setTimeout(function () {
+          angular.element('.login-box').addClass('login-act');
+        }, 200);
+        that.flag.isLoginTab = true;
+        that.flag.isJoinTab = false;
+      },
       submit: function () {
         var name = $("#user_name").val();
         var pass = $("#password").val();
@@ -28,33 +37,14 @@ angular.module('nextDinnerApp')
         }, function (error) {
           $("#user_name").val("");
           $("#password").val("");
-          $("#login_form").removeClass('shake_effect');
+          $(".login-box").removeClass('shake_effect');
           setTimeout(function () {
-            $("#login_form").addClass('shake_effect')
+            $(".login-box").addClass('shake_effect')
           }, 1);
         });
       },
       register: function () {
         alert('未开放注册');
-      },
-      join: function () {
-        var that = this;
-        var t = 0;
-        if (t == 0) {
-          angular.element('.login-head p').css('left',320);
-          setTimeout(function () {
-            angular.element('.login-box').addClass('login-act');
-          }, 200);
-          that.flag.isLoginTab = true;
-          that.flag.isJoinTab = false;
-          t++;
-        } else {
-          t++;
-          document.querySelector('.login-content').style.bottom = '-420px';
-          setTimeout(function () {
-              document.querySelector('.login-box').className = 'login-box login-act login-finish';
-            }, 500);
-        }
       }
     };
     $scope.main.init();
