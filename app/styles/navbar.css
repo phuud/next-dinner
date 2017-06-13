@@ -98,6 +98,14 @@ Header
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.cd-main-header a{
+  color:#fff;
+  font-weight: bold;
+  font-size:20px;
+}
+.cd-main-header a:hover{
+  text-decoration: none;
+}
 .cd-main-header::after {
   clear: both;
   content: "";
@@ -374,6 +382,7 @@ Sidebar
   top: 0;
   width: 100%;
   padding: 45px 0 0;
+  font-weight:bold;
   background-color: #2c3136;
   visibility: hidden;
   opacity: 0;
@@ -414,6 +423,7 @@ Sidebar
   letter-spacing: .1em;
 }
 .cd-side-nav a {
+  text-decoration: none;
   position: relative;
   color: #ffffff;
   font-size: 1.4rem;
@@ -670,7 +680,7 @@ Sidebar
     border: none;
     padding: 1em;
   }
-  .no-touch .has-children ul a:hover {
+  .has-children ul a:hover {
     color: #1784c7;
   }
   .has-children > a::after {

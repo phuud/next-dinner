@@ -8,7 +8,25 @@
 body {
   padding: 0;
 }
-
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a:hover,a:focus{
+  text-decoration: none;
+  outline:none;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
