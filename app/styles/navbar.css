@@ -101,7 +101,8 @@ Header
 .cd-main-header a{
   color:#fff;
   font-weight: bold;
-  font-size:20px;
+  font-size:22px;
+  text-shadow: #000 2px 1px;
 }
 .cd-main-header a:hover{
   text-decoration: none;
@@ -128,7 +129,7 @@ Header
 }
 @media only screen and (min-width: 768px) {
   .cd-logo {
-    margin: 16px 0 0 36px;
+    margin: 12px 4px 0 34px;
   }
 }
 

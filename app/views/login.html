@@ -240,23 +240,29 @@
         <p><i class="fa fa-cogs fa-fw"></i></p>
       </div>
       <div class="login-content">
-        <h2>Next OA</h2>
-        <p>
-          <i class="fa fa-user fa-fw"></i>
-          <input type="text" id="user_name" class="input_text" placeholder="Account"/>
-        </p>
-        <p>
-          <i class="fa fa-lock fa-fw"></i>
-          <input type="password" id="password" class="input_text" placeholder="Password"/>
-        </p>
-        <a href="javascript:void(0)" ng-click="main.register()">立即注册</a>
+        <img src="images/loading.gif" alt="Loading..."
+             style="margin-top: calc(50% - 100px);margin-bottom: 200px"
+             ng-show="main.flag.showLoading">
+        <div ng-show="!main.flag.showLoading">
+          <h2>Next OA</h2>
+          <p>
+            <i class="fa fa-user fa-fw"></i>
+            <input type="text" id="user_name" class="input_text" placeholder="Account"/>
+          </p>
+          <p>
+            <i class="fa fa-lock fa-fw"></i>
+            <input type="password" id="password" class="input_text" placeholder="Password"/>
+          </p>
+          <a href="javascript:void(0)" ng-click="main.register()">立即注册</a>
+        </div>
       </div>
       <div class="login-welcome">
         <h2>Welcome</h2>
       </div>
       <div class="login-btn">
         <a href="javascript:void(0)" ng-click="main.join()" ng-show="main.flag.isJoinTab">Join</a>
-        <a href="javascript:void(0)" ng-click="main.submit()" ng-show="main.flag.isLoginTab">Login</a>
+        <a href="javascript:void(0)" ng-click="main.submit()" ng-show="main.flag.isLoginTab"
+           ng-disabled="main.flag.showLoading">Login</a>
       </div>
     </div>
   </div>
