@@ -118,6 +118,9 @@ Header
     height: 55px;
   }
 }
+.cd-main-content .fa{
+  font-size: 14px;
+}
 
 .cd-logo {
   float: left;
@@ -129,7 +132,7 @@ Header
 }
 @media only screen and (min-width: 768px) {
   .cd-logo {
-    margin: 12px 4px 0 34px;
+    margin: 12px 0px 0 32px;
   }
 }
 
@@ -436,40 +439,40 @@ Sidebar
   padding-left: calc(5% + 24px);
   border-bottom: 1px solid #373d44;
 }
-.cd-side-nav > ul > li > a::before {
-  /* icon before item name */
-  position: absolute;
-  content: '';
-  left: 5%;
-  top: 50%;
-  bottom: auto;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  height: 16px;
-  width: 16px;
-  background: url(../img/cd-nav-icons.svg) no-repeat 0 0;
-}
-.cd-side-nav > ul > li.overview > a::before {
-  background-position: -64px 0;
-}
-.cd-side-nav > ul > li.notifications > a::before {
-  background-position: -80px 0;
-}
-.cd-side-nav > ul > li.comments > a::before {
-  background-position: -48px 0;
-}
-.cd-side-nav > ul > li.bookmarks > a::before {
-  background-position: -32px 0;
-}
-.cd-side-nav > ul > li.images > a::before {
-  background-position: 0 0;
-}
-.cd-side-nav > ul > li.users > a::before {
-  background-position: -16px 0;
-}
+/*.cd-side-nav > ul > li > a::before {*/
+  /*!* icon before item name *!*/
+  /*position: absolute;*/
+  /*content: '';*/
+  /*left: 5%;*/
+  /*top: 50%;*/
+  /*bottom: auto;*/
+  /*-webkit-transform: translateY(-50%);*/
+  /*-moz-transform: translateY(-50%);*/
+  /*-ms-transform: translateY(-50%);*/
+  /*-o-transform: translateY(-50%);*/
+  /*transform: translateY(-50%);*/
+  /*height: 16px;*/
+  /*width: 16px;*/
+  /*background: url(../img/cd-nav-icons.svg) no-repeat 0 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.overview > a::before {*/
+  /*background-position: -64px 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.notifications > a::before {*/
+  /*background-position: -80px 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.comments > a::before {*/
+  /*background-position: -48px 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.bookmarks > a::before {*/
+  /*background-position: -32px 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.images > a::before {*/
+  /*background-position: 0 0;*/
+/*}*/
+/*.cd-side-nav > ul > li.users > a::before {*/
+  /*background-position: -16px 0;*/
+/*}*/
 .cd-side-nav .count {
   /* notification badge */
   position: absolute;
@@ -539,16 +542,16 @@ Sidebar
   .cd-side-nav > ul > li > a {
     padding: calc(2.2em + 24px) 0 2.4em;
   }
-  .cd-side-nav > ul > li > a::before {
-    left: 50%;
-    right: auto;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    top: 2.4em;
-  }
+  /*.cd-side-nav > ul > li > a::before {*/
+    /*left: 50%;*/
+    /*right: auto;*/
+    /*-webkit-transform: translateX(-50%);*/
+    /*-moz-transform: translateX(-50%);*/
+    /*-ms-transform: translateX(-50%);*/
+    /*-o-transform: translateX(-50%);*/
+    /*transform: translateX(-50%);*/
+    /*top: 2.4em;*/
+  /*}*/
   .cd-side-nav .active > a {
     /* current page */
     box-shadow: inset 3px 0 0 #1784c7;
@@ -585,20 +588,20 @@ Sidebar
     background-color: #33383e;
   }
   .cd-side-nav > ul > li > a {
-    padding: 1em 1em 1em 42px;
+    padding: 1em 1em 1em 25px;
     text-align: left;
     border-bottom: none;
   }
-  .cd-side-nav > ul > li > a::before {
-    top: 50%;
-    bottom: auto;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    left: 18px;
-  }
+  /*.cd-side-nav > ul > li > a::before {*/
+    /*top: 50%;*/
+    /*bottom: auto;*/
+    /*-webkit-transform: translateY(-50%);*/
+    /*-moz-transform: translateY(-50%);*/
+    /*-ms-transform: translateY(-50%);*/
+    /*-o-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
+    /*left: 18px;*/
+  /*}*/
   .cd-side-nav .cd-label {
     display: block;
     padding: 1em 18px;
