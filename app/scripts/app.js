@@ -15,11 +15,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
   ])
-  .run(function ($rootScope,$route,$location) {
-    var APP_ID = 'TODO';
-    var APP_KEY = 'TODO';
+  .run(function ($rootScope,$route,$location,LEANCLOUD_APP_ID,LEANCLOUD_APP_KEY) {
+    var APP_ID = LEANCLOUD_APP_ID;
+    var APP_KEY = LEANCLOUD_APP_KEY;
     AV.init({
       appId: APP_ID,
       appKey: APP_KEY
