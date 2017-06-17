@@ -2,11 +2,12 @@
  * Created by Luke on 2017/5/25.
  */
 
+"use strict";
 angular.module('nextDinnerApp')
   .controller('LoginCtrl', function ($scope, $timeout, $location) {
     $scope.main = {
       init: function () {
-        this.title = 'Next OA'
+        this.title = 'Next OA';
       },
       flag:{
         isJoinTab:true,
@@ -38,7 +39,7 @@ angular.module('nextDinnerApp')
             angular.element('.login-box').addClass('login-finish');
             $timeout(function () {
               angular.element('.login-box').addClass('login-finish');
-                $location.path("/dinner")
+                $location.path("/dinner");
             }, 2000);
           }, 500);
         }, function (error) {
@@ -47,7 +48,7 @@ angular.module('nextDinnerApp')
           $("#password").val("");
           $(".login-box").removeClass('shake_effect');
           setTimeout(function () {
-            $(".login-box").addClass('shake_effect')
+            $(".login-box").addClass('shake_effect');
           }, 1);
         });
       },
