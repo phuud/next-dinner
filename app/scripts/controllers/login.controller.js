@@ -12,7 +12,9 @@ angular.module('nextDinnerApp')
       flag:{
         isJoinTab:true,
         isLoginTab:false,
-        showLoading:false
+        showLoading:false,
+        isLoginMode:true,
+        isRegisterMode:false
       },
       join: function () {
         var that = this;
@@ -51,6 +53,16 @@ angular.module('nextDinnerApp')
             $(".login-box").addClass('shake_effect');
           }, 1);
         });
+      },
+      toLogin: function () {
+        var that = this;
+        this.flag.isLoginMode = true;
+        this.flag.isRegisterMode = false;
+      },
+      toRegister: function () {
+        var that = this;
+        this.flag.isLoginMode = false;
+        this.flag.isRegisterMode = true;
       },
       register: function () {
         alert('未开放注册');

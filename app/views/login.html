@@ -247,7 +247,8 @@
              style="margin-top: calc(50% - 100px);margin-bottom: 200px"
              ng-show="main.flag.showLoading">
         <div ng-show="!main.flag.showLoading">
-          <h2>Next OA</h2>
+          <h2 ng-show="main.flag.isLoginMode">Next OA</h2>
+          <h3 ng-show="main.flag.isRegisterMode" style="margin-top: 0">Sign Up</h3>
           <p>
             <i class="fa fa-user fa-fw"></i>
             <input type="text" id="user_name" class="input_text" placeholder="Account"/>
@@ -256,7 +257,12 @@
             <i class="fa fa-lock fa-fw"></i>
             <input type="password" id="password" class="input_text" placeholder="Password"/>
           </p>
-          <a href="javascript:void(0)" ng-click="main.register()">立即注册</a>
+          <p ng-show="main.flag.isRegisterMode">
+            <i class="fa fa-lock fa-fw"></i>
+            <input type="password" id="password" class="input_text" placeholder="Comfirm Password"/>
+          </p>
+          <a href="javascript:void(0)" ng-show="main.flag.isLoginMode" ng-click="main.toRegister()">立即注册</a>
+          <a href="javascript:void(0)" ng-show="main.flag.isRegisterMode" ng-click="main.toLogin()">返回登录</a>
         </div>
       </div>
       <div class="login-welcome">
@@ -264,8 +270,10 @@
       </div>
       <div class="login-btn">
         <a href="javascript:void(0)" ng-click="main.join()" ng-show="main.flag.isJoinTab">Join</a>
-        <a href="javascript:void(0)" ng-click="main.submit()" ng-show="main.flag.isLoginTab"
+        <a href="javascript:void(0)" ng-click="main.submit()" ng-show="main.flag.isLoginTab && main.flag.isLoginMode"
            ng-disabled="main.flag.showLoading">Login</a>
+        <a href="javascript:void(0)" ng-click="main.register()" ng-show="main.flag.isLoginTab && main.flag.isRegisterMode"
+           ng-disabled="main.flag.showLoading">Submit</a>
       </div>
     </div>
   </div>
