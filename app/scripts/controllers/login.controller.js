@@ -46,8 +46,7 @@ angular.module('nextDinnerApp')
           }, 500);
         }, function (error) {
           that.flag.showLoading = false;
-          $("#user_name").val("");
-          $("#password").val("");
+          that.clear();
           $(".login-box").removeClass('shake_effect');
           setTimeout(function () {
             $(".login-box").addClass('shake_effect');
@@ -65,7 +64,42 @@ angular.module('nextDinnerApp')
         this.flag.isRegisterMode = true;
       },
       register: function () {
-        alert('未开放注册');
+        var that = this;
+        var name = $("#user_name").val();
+        var pass = $("#password").val();
+        var comPass = $("#comfirm_password").val();
+        if(pass === comPass){
+          that.flag.showLoading = true;
+          var user = new AV.User();
+          user.setUsername(name);
+          user.setPassword(pass);
+          user.signUp().then(function (loginedUser) {
+            console.log(loginedUser);
+            that.flag.showLoading = false;
+            $scope.$apply();
+            angular.element('.login-content').css('top','-250px');
+            $timeout(function () {
+              angular.element('.login-box').addClass('login-finish');
+              $timeout(function () {
+                angular.element('.login-box').removeClass('login-finish');
+                angular.element('.login-content').css('top','30px');
+                that.toLogin();
+              }, 2000);
+            }, 500);
+          }, function (error) {
+            alert(error);
+            that.clear();
+            that.flag.showLoading = false;
+            $scope.$apply();
+          });
+        }else{
+          alert('密码不一致！');
+        }
+      },
+      clear: function(){
+        $("#user_name").val("");
+        $("#password").val("");
+        $("#comfirm_password").val("");
       }
     };
     $scope.main.init();

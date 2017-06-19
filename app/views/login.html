@@ -132,6 +132,9 @@
     width: 75%;
   }
 
+  .login-content .register-p {
+    margin: 15px auto;
+  }
   .login-content i{
     position: absolute;
     line-height: 40px;
@@ -248,32 +251,33 @@
              ng-show="main.flag.showLoading">
         <div ng-show="!main.flag.showLoading">
           <h2 ng-show="main.flag.isLoginMode">Next OA</h2>
-          <h3 ng-show="main.flag.isRegisterMode" style="margin-top: 0">Sign Up</h3>
-          <p>
+          <h3 ng-show="main.flag.isRegisterMode" style="margin-top: 0;margin-bottom: 25px">Sign Up</h3>
+          <p ng-class="{'register-p':main.flag.isRegisterMode}">
             <i class="fa fa-user fa-fw"></i>
             <input type="text" id="user_name" class="input_text" placeholder="Account"/>
           </p>
-          <p>
+          <p ng-class="{'register-p':main.flag.isRegisterMode}">
             <i class="fa fa-lock fa-fw"></i>
             <input type="password" id="password" class="input_text" placeholder="Password"/>
           </p>
-          <p ng-show="main.flag.isRegisterMode">
+          <p ng-show="main.flag.isRegisterMode" class="register-p">
             <i class="fa fa-lock fa-fw"></i>
-            <input type="password" id="password" class="input_text" placeholder="Comfirm Password"/>
+            <input type="password" id="comfirm_password" class="input_text" placeholder="Comfirm Password"/>
           </p>
           <a href="javascript:void(0)" ng-show="main.flag.isLoginMode" ng-click="main.toRegister()">立即注册</a>
           <a href="javascript:void(0)" ng-show="main.flag.isRegisterMode" ng-click="main.toLogin()">返回登录</a>
         </div>
       </div>
       <div class="login-welcome">
-        <h2>Welcome</h2>
+        <h2 ng-show="main.flag.isRegisterMode">Success</h2>
+        <h2 ng-show="main.flag.isLoginMode">Welcome</h2>
       </div>
       <div class="login-btn">
-        <a href="javascript:void(0)" ng-click="main.join()" ng-show="main.flag.isJoinTab">Join</a>
+        <a href="javascript:void(0)" ng-click="main.join()" ng-show="main.flag.isJoinTab">HERE!</a>
         <a href="javascript:void(0)" ng-click="main.submit()" ng-show="main.flag.isLoginTab && main.flag.isLoginMode"
            ng-disabled="main.flag.showLoading">Login</a>
         <a href="javascript:void(0)" ng-click="main.register()" ng-show="main.flag.isLoginTab && main.flag.isRegisterMode"
-           ng-disabled="main.flag.showLoading">Submit</a>
+           ng-disabled="main.flag.showLoading">Join</a>
       </div>
     </div>
   </div>
