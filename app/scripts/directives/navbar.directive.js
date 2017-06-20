@@ -3,14 +3,18 @@
  */
 
 angular.module('nextDinnerApp')
-  .directive('navbarDirective', function () {
+  .directive('navbarDirective', function ($location) {
     return {
       replace: true,
       restrict: 'ACE',
       templateUrl:'views/navbar.html',
       link: function ($scope) {
         $scope.navbar = {
-          title:'navbar'
+          title:'navbar',
+          logout: function(){
+            AV.User.logOut();
+            $location.path("/")
+          }
         };
         //cache DOM elements
         var mainContent = $('.cd-main-content'),

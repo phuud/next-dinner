@@ -4,7 +4,7 @@
 
 "use strict";
 angular.module('nextDinnerApp')
-  .controller('LoginCtrl', function ($scope, $timeout, $location) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $timeout, $location) {
     $scope.main = {
       init: function () {
         this.title = 'Next OA';
@@ -34,7 +34,8 @@ angular.module('nextDinnerApp')
           console.log(loginedUser);
           that.flag.showLoading = false;
           var username = loginedUser.getUsername();
-          var email = loginedUser.getEmail();
+          localStorage.setItem(username,username);
+          $rootScope.userName = username;
           //alert("登录成功！");
           angular.element('.login-content').css('top','-250px');
           $timeout(function () {
@@ -42,7 +43,7 @@ angular.module('nextDinnerApp')
             $timeout(function () {
               angular.element('.login-box').addClass('login-finish');
                 $location.path("/dinner");
-            }, 2000);
+            }, 1000);
           }, 500);
         }, function (error) {
           that.flag.showLoading = false;
