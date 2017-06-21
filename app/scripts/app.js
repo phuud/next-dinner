@@ -45,8 +45,8 @@ angular
       var currentUser = AV.User.current();
       if (currentUser) {
         console.log('login in');
-      }
-      else {
+        $location.path("/dinner")
+      } else if($location.path() !== '/login' && $location.path() !== '/') {
         console.log('not login');
         alert('not login');
         $location.path("/")
