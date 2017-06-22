@@ -10,12 +10,18 @@ angular.module('nextDinnerApp')
       templateUrl:'views/navbar.html',
       link: function ($scope) {
         $scope.navbar = {
+          userName:'Account',
           title:'navbar',
+          init: function(){
+            var currentUser = AV.User.current();
+            this.userName = currentUser.attributes.username;
+          },
           logout: function(){
             AV.User.logOut();
             $location.path("/")
           }
         };
+        $scope.navbar.init();
         //cache DOM elements
         var mainContent = $('.cd-main-content'),
           header = $('.cd-main-header'),

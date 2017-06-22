@@ -251,7 +251,7 @@ Top Navigation
 .cd-top-nav img {
   /* avatar image */
   position: absolute;
-  left: 1.8em;
+  left: 1em;
   top: 50%;
   bottom: auto;
   -webkit-transform: translateY(-50%);
@@ -259,8 +259,8 @@ Top Navigation
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  height: 20px;
-  width: 20px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
   display: none;
 }
@@ -620,7 +620,7 @@ Sidebar
   }
   .cd-top-nav .has-children > a {
     height: 100%;
-    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;
+    padding: 0 calc(1.8em + 1px) 0 calc(1.8em + 35px) !important;
     line-height: 55px;
   }
   .cd-top-nav .has-children > a::after {
