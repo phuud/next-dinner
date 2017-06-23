@@ -45,7 +45,7 @@ angular
       var currentUser = AV.User.current();
       if (currentUser) {
         console.log('login in');
-        $location.path("/dinner")
+        $location.path("/overview")
       } else if($location.path() !== '/login' && $location.path() !== '/') {
         console.log('not login');
         alert('not login');
@@ -64,6 +64,11 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login'
+      })
+      .when('/overview', {
+        templateUrl: 'views/overview.html',
+        controller: 'OverviewCtrl',
+        controllerAs: 'overview'
       })
       .when('/cat', {
         templateUrl: 'views/cat.html',
