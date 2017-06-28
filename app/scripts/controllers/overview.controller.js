@@ -5,9 +5,10 @@
 'use strict'
 
 angular.module('nextDinnerApp')
-  .controller('OverviewCtrl', function ($scope) {
+  .controller('OverviewCtrl', function ($scope, DataService) {
     $scope.overview = {
       init: function () {
+        this.links = DataService.linkData();
         console.log(this.links);
         $scope.datas = this.links;
       }

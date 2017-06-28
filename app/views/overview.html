@@ -22,6 +22,9 @@
     cursor:pointer;
     background:#ccc;
     border-radius: 5px;
+    display: block;
+    font-size: 25px;
+    color: #fff;
   }
   @media only screen and (min-width: 768px) {
     .item_content ul li{
@@ -59,8 +62,9 @@
     <div class="item_content">
       <ul style="margin:0 auto">
         <li ng-repeat="link in datas">
-          <div class="item">
-          </div>
+          <a href="{{link.linkUrl}}" class="item" target="_blank">
+            {{link.linkName}}
+          </a>
         </li>
       </ul>
     </div>
