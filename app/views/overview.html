@@ -26,11 +26,13 @@
     font-size: 25px;
     color: #fff;
   }
+  .item_content .item .text {
+    font-size: 14px;
+  }
   @media only screen and (min-width: 768px) {
     .item_content ul li{
       width:23%;
       height:108px;
-      line-height:108px;
     }
     .item_content {
       margin:15% auto;
@@ -40,7 +42,6 @@
     .item_content ul li{
       width:18%;
       height:140px;
-      line-height: 140px;
     }
     .item_content {
       margin:13% auto;
@@ -50,7 +51,6 @@
     .item_content ul li{
       width:14.6%;
       height:160px;
-      line-height: 160px;
     }
     .item_content {
       margin:11% auto;
@@ -62,8 +62,10 @@
     <div class="item_content">
       <ul style="margin:0 auto">
         <li ng-repeat="link in datas">
-          <a href="{{link.linkUrl}}" class="item" target="_blank">
-            {{link.linkName}}
+          <a href="{{link.url}}" class="item" target="_blank">
+            <span>{{link.title}}</span>
+            <br>
+            <span class="text">{{link.text}}</span>
           </a>
         </li>
       </ul>

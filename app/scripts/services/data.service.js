@@ -10,52 +10,14 @@ angular.module('nextDinnerApp')
       linkData: function(){
         var linkData = [
             {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
+              title: 'NextTrucking',
+              text: 'Website',
+              url: 'https://www.nexttrucking.com'
             },
             {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
-            },
-            {
-              linkName: 'NextWeb',
-              linkUrl: 'https://www.nexttrucking.com'
+              title: 'Google',
+              text: 'google site',
+              url: 'https://www.google.com'
             }
           ];
         return linkData;
