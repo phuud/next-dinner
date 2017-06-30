@@ -45,11 +45,13 @@ angular
       var currentUser = AV.User.current();
       if (currentUser) {
         console.log('login in');
-        $location.path("/overview")
+        if ($location.path() === '/login' || $location.path() === '/') {
+          $location.path("/overview");
+        }
       } else if($location.path() !== '/login' && $location.path() !== '/') {
         console.log('not login');
         alert('not login');
-        $location.path("/")
+        $location.path("/");
       }
     });
   })
@@ -75,11 +77,14 @@ angular
         controller: 'CatCtrl',
         controllerAs: 'cat'
       })
-      .when('/dinner', {
-        templateUrl: 'views/dinner.html',
-        controller: 'DinnerCtrl',
-        controllerAs: 'dinner'
-      })
+    .when('/dinner', {
+      templateUrl: 'views/dinner.html',
+      controller: 'DinnerCtrl',
+      controllerAs: 'dinner'
+    })
+    .when('/help', {
+      templateUrl: 'views/help.html'
+    })
       .otherwise({
         redirectTo: '/'
       });
