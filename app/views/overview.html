@@ -11,37 +11,50 @@
   }
   .item_content ul li {
     width:31%;
-    height:80px;
-    float:left;
-    margin:1%
+    height: 160px;
+    float: left;
+    margin: 1%;
+    border: 1px solid #666;
+    box-shadow: #ddd 3px 3px;
+    cursor: pointer;
+    border-radius: 5px;
   }
   .item_content .item {
     width:100%;
     height:100%;
     text-align:center;
-    cursor:pointer;
-    background:#ccc;
-    border-radius: 5px;
     display: block;
+    color: #333;
+  }
+
+  .item_content .item .title {
+    font-weight: bold;
     font-size: 25px;
-    color: #fff;
   }
   .item_content .item .text {
     font-size: 14px;
   }
-  @media only screen and (min-width: 768px) {
+
+  @media only screen and (max-width: 476px) {
     .item_content ul li{
-      width:23%;
-      height:108px;
+      height: 120px;
     }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .item_content ul li {
+      width: 23%;
+      height: 160px;
+    }
+
     .item_content {
-      margin:15% auto;
+      margin: 15% auto;
     }
   }
   @media only screen and (min-width: 1173px) {
     .item_content ul li{
       width:18%;
-      height:140px;
+      height: 200px;
     }
     .item_content {
       margin:13% auto;
@@ -50,7 +63,7 @@
   @media only screen and (min-width: 1560px) {
     .item_content ul li{
       width:14.6%;
-      height:160px;
+      height: 220px;
     }
     .item_content {
       margin:11% auto;
@@ -63,7 +76,7 @@
       <ul style="margin:0 auto">
         <li ng-repeat="link in datas">
           <a href="{{link.url}}" class="item" target="_blank">
-            <span>{{link.title}}</span>
+            <span class="title">{{link.title}}</span>
             <br>
             <span class="text">{{link.text}}</span>
           </a>
