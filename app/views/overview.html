@@ -2,7 +2,7 @@
   .item_content {
     width:85%;
     height:460px;
-    margin:18% auto;
+    margin: 15% auto;
   }
   .item_content ul  {
     list-style:none;
@@ -11,62 +11,73 @@
   }
   .item_content ul li {
     width:31%;
-    height: 160px;
     float: left;
     margin: 1%;
     border: 1px solid #666;
     box-shadow: #ddd 3px 3px;
     cursor: pointer;
     border-radius: 5px;
+    position: relative;
   }
-  .item_content .item {
-    width:100%;
-    height:100%;
-    text-align:center;
+
+  .item_content .item_head {
     display: block;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-size: 10rem;
+  }
+
+  .item_content .item {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #333;
+    position: relative;
+    border-top: 1px dashed #333;
+    bottom: 0;
+    line-height: 25px;
+    padding: 10px;
+  }
+
+  .item_content .item a {
     color: #333;
   }
 
   .item_content .item .title {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2rem;
   }
   .item_content .item .text {
     font-size: 14px;
   }
 
   @media only screen and (max-width: 476px) {
-    .item_content ul li{
-      height: 120px;
-    }
   }
 
   @media only screen and (min-width: 769px) {
     .item_content ul li {
       width: 23%;
-      height: 160px;
     }
 
     .item_content {
-      margin: 15% auto;
+      margin: 13% auto;
     }
   }
   @media only screen and (min-width: 1173px) {
     .item_content ul li{
       width:18%;
-      height: 200px;
     }
     .item_content {
-      margin:13% auto;
+      margin: 11% auto;
     }
   }
   @media only screen and (min-width: 1560px) {
     .item_content ul li{
       width:14.6%;
-      height: 220px;
     }
     .item_content {
-      margin:11% auto;
+      margin: 9% auto;
     }
   }
 </style>
@@ -75,10 +86,16 @@
     <div class="item_content">
       <ul style="margin:0 auto">
         <li ng-repeat="link in datas">
-          <a href="{{link.url}}" class="item" target="_blank">
-            <span class="title">{{link.title}}</span>
-            <br>
-            <span class="text">{{link.text}}</span>
+          <a href="{{link.url}}" target="_blank">
+            <div class="item_head">
+              <img src="{{link.img}}" alt="title image" ng-show="link.img">
+              <span ng-show="!link.img">{{link.title | limitTo:1}}</span>
+            </div>
+            <div class="item">
+              <span class="title">{{link.title}}</span>
+              <br>
+              <span class="text">{{link.text}}</span>
+            </div>
           </a>
         </li>
       </ul>
